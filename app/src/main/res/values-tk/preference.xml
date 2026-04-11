@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="inputMethodVoice">Ses işjeňligi</string>
+    <string name="inputMethodPtt">Gürlemek üçin bas</string>
+    <string name="inputMethodContinuous">Yzygiderli</string>
+
+    <!-- Theme names -->
+    <string name="theme_system">Ulgam bökdençsizi</string>
+    <string name="theme_light">Açyk</string>
+    <string name="theme_dark">Garaňky</string>
+
+    <!-- Language -->
+    <string name="language_system">Ulgam bökdençsizi</string>
+
+    <!-- Hot corner -->
+    <string name="hot_corner_none">Öçürildi</string>
+    <string name="hot_corner_top_left">↖ çep ýokary</string>
+    <string name="hot_corner_bottom_left">↙ çep aşak</string>
+    <string name="hot_corner_top_right">Sag ýokary ↗</string>
+    <string name="hot_corner_bottom_right">sag aşak ↘</string>
+
+    <!-- About -->
+    <string name="about">Hakda</string>
+    <string name="acknowledgements">Goşant goşanlar</string>
+    <string name="acknowledgementsSum">Mumla-a kimin goşant goşandygyny görüň (web baglanyşygy)</string>
+    <string name="licenses">Ygtyýarnamalar</string>
+
+    <string name="authentication">Tassyklamak</string>
+    <string name="audioInputMethodSum">Ses geçirilişiniň nähili işjeňleşdirilendigi.</string>
+    <string name="audioInputMethod">Geçiriş usuly</string>
+    <string name="audioInputVolume">Mikrofon ses derejesini</string>
+    <string name="audioInputVolumeSum">Sesi normallaşdyrmak üçin dereje.</string>
+    <string name="detectionThreshold">Anyklaýyş çägi</string>
+    <string name="detectionThresholdSum">Sesi anyklamak üçin iň az ses derejesini (geçiriş usuly \"Ses işjeňligi\" bolanda).</string>
+    <string name="pttKey">Gürlemek üçin bas açary</string>
+    <string name="pttKeySum">Ses geçirmek üçin fiziki düwme ulanyň.</string>
+    <string name="hotCorner">Gürlemek üçin bas burç</string>
+    <string name="hotCornerSum">Android boýunça ses geçirmek üçin ekran burçuna basyň.</string>
+    <string name="general">Umumy</string>
+    <string name="appearance">Görünüş</string>
+    <string name="themeSum">Programmanyň görünüşini üýtgediň.</string>
+    <string name="theme">Tema</string>
+    <string name="language">Dil</string>
+    <string name="advancedAudio">Ösen</string>
+    <string name="forceTcp">Diňe TCP</string>
+    <string name="forceTcpSum">Aragatnaşyk üçin UDP-ni öçürýär.</string>
+    <string name="audio">Ses</string>
+    <string name="audioSampleRate">Giriş nümune tizligi</string>
+    <string name="audioSampleRateSum">Isleg bildirilen ses nümune tizligi. Käbir enjamlar has az tizligi goldaýar.</string>
+    <string name="chatNotifications">Söhbet bildirişleri</string>
+    <string name="chatNotificationsSum">Täze söhbet habarlary üçin görkezilýär.</string>
+    <string name="defaultUsername">Bökdençsiz ulanyjy ady</string>
+    <string name="defaultUsernameSum">Serwer goşanyňyzda ýa-da açyk serwere birikeniňizde öňünden doldurylan at.</string>
+    <string name="defaultUsernameDefault">Mumla_Ulanyjysy</string>
+    <string name="certificateGenerate">Sertifikat döret</string>
+    <string name="certificateGenerateSum">Täze öz-özüni gol çeken Mumla sertifikatyny döredýär. Başlangyçlar üçin maslahat berilýär.</string>
+    <string name="pttSettings">Gürlemek üçin bas sazlamalary</string>
+    <string name="voiceActivitySettings">Ses işjeňligi sazlamalary</string>
+    <string name="disableOpus">Opus kodeкinden gaça dur</string>
+    <string name="disableOpusSum">Mumble 1.2.4 serwerleri üçin Opus goldawyny öçüriň.</string>
+    <string name="hidePtt">Gürlemek üçin bas düwmesini gizle</string>
+    <string name="hidePttSum">Diňe gürlemek üçin bas burç ýa-da fiziki açar ulansaňyz peýdaly.</string>
+    <string name="useTts">Teksti sese öwürmek</string>
+    <string name="useTtsSum">Gelen habary ses sintezi ulanyp ýokary sesde oka.</string>
+    <string name="shortTtsMessages">Gysgaldylan tekst-ses habarlary</string>
+    <string name="shortTtsMessagesSum">Baglanyşyklaryň diňe domen atlaryny okap habarlary gysgalt.</string>
+    <string name="togglePtt">Yapşyk gürlemek üçin bas düwmesi</string>
+    <string name="togglePttSum">Gürlemek üçin bas düwmesi geçirişi açýar/ýapýar. Saklamak hökman däl.</string>
+    <string name="autoReconnect">Awtomatik täzeden birikdir</string>
+    <string name="autoReconnectSum">Ýitirilen serwerle birikdirmegi täzeden dikeldýär.</string>
+    <string name="useTor">Tor arkaly birikdir</string>
+    <string name="useTorSum">Orbot programmasy talap edilýär.</string>
+    <string name="inputQuality">Mikrofon giriş hili</string>
+    <string name="inputQualitySum">Isleg bildirilen maglumat geçiriş tizligi (bit/sekuntda).</string>
+    <string name="pttButtonHeight">Gürlemek üçin bas düwmesiniň beýikligi</string>
+    <string name="pttButtonHeightSum">Gürlemek üçin bas düwmesiniň dik uzynlygyny üýtgediň.</string>
+    <string name="pressKey">Gürlemek üçin bas üçin fiziki açara basyň.</string>
+    <string name="pressKeyInfo">Muny ulanmak üçin programmanyň açyk bolmagy gerek (Android çäklendirmeleri sebäpli).</string>
+    <string name="loadImagesSum">Söhbetde suratlary ýükläp görkezýär.</string>
+    <string name="loadImages">Daşarky suratlar</string>
+    <string name="clearServerCertificates">Serwer sertifikatlaryny arassala</string>
+    <string name="clearServerCertificatesSum">Ähli ynanylýan serwer sertifikatlaryny Mumla-dan aýyr.</string>
+    <string name="version">Wersiýa</string>
+    <string name="halfDuplex">Bir taraplaýyn ses</string>
+    <string name="halfDuplexSum">Ses halkalarynyň/yza gaýtarmasynyň öňüni almak üçin gürlemek üçin bas wagty beýleki oýnatmany sessize alýar.</string>
+    <string name="handsetMode">Trubka</string>
+    <string name="handsetModeSum">Adaty telefon jaňyny simulýasiýa etmek üçin öňdäki hoparlöri we ýakynlyk datçigini ulanýar.</string>
+    <string name="pttSound">Gürlemek üçin bas sesi</string>
+    <string name="pttSoundSum">Gürlemek üçin bas düwmesine basanyňyzda ses effekti çal.</string>
+    <string name="preprocessor_enabled">Giriş öňünden gaýtadan işlemek</string>
+    <string name="preprocessor_enabled_sum">Gurşaw sesini basyp ýatyrýar we ses derejesini normallaşdyrýar.</string>
+    <string name="audio_per_packet">Paket başyna ses</string>
+    <string name="audio_per_packet_sum">Ses paketi başyna sesin uzynlygy.</string>
+    <string name="stay_awake">Oýa gal</string>
+    <string name="stay_awake_sum">Mumla açyk bolanda ekrany açyk saklaýar.</string>
+    <string name="pref_certificate_title">Sertifikat</string>
+    <string name="pref_certificate_summary">Serwere birikeniňizde ulanmak üçin bökdençsiz.</string>
+    <string name="pref_import_certificate_title">Sertifikaty import et</string>
+    <string name="pref_import_certificate_summary">Daşarky ammaryň birinden import ediň.</string>
+    <string name="pref_export_certificate_title">Sertifikaty eksport et</string>
+    <string name="pref_export_certificate_summary">Daşarky ammara eksport ediň.</string>
+    <string name="pref_show_user_count">Kanal ulanyjy sanyny görkeziň</string>
+    <string name="pref_show_user_count_summary">Kanal agaç bölümlerindäki ulanyjy sanyny görkezýär.</string>
+    <string name="pref_start_up_in_pinned_mode">Sabitlenilen kanallar düzgüni</string>
+    <string name="pref_start_upIn_pinned_mode_sum">Birikenden soň \"Sabitlenilen kanallar\" düzgünini işjeňleşdirýär (sabitlenilmedik kanallary gizleýär).</string>
+</resources>

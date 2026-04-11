@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Drawer pane -->
+    <string name="drawer_open">Çekmeçäni aç</string>
+    <string name="drawer_close">Çekmeçäni ýap</string>
+    <string name="drawer_not_connected">Birikdirilmedi</string>
+    <string name="drawer_server">Ähli kanallar</string>
+    <string name="drawer_tokens">Giriş bellikleri</string>
+    <string name="drawer_pinned">Sabitlenilen kanallar</string>
+    <string name="drawer_header_servers">Serwerler</string>
+    <string name="drawer_favorites">Halanlar</string>
+    <string name="drawer_public">Açyk serwerler</string>
+
+    <!-- Chat formatting -->
+    <string name="chat_message_to">%1$s → %2$s</string>
+    <string name="chat_message_tts_short_link">(%1$s-a baglanyşyk)</string>
+
+    <!-- User menu -->
+    <string name="user_menu_kick">Kowmak</string>
+    <string name="user_menu_ban">Gadagan etmek</string>
+    <string name="user_menu_mute">Sesini öçürmek</string>
+    <string name="user_menu_deafen">Gulak asmaz etmek</string>
+    <string name="user_menu_move">Geçirmek</string>
+    <string name="user_menu_priority_speaker">Ileri tutulýan gepleýji</string>
+    <string name="user_menu_local_mute">Ýerli sesini öçürmek</string>
+    <string name="user_menu_ignore_messages">Habarlary görmezlige salmak</string>
+    <string name="user_menu_change_comment">Teswiri üýtgetmek</string>
+    <string name="user_menu_view_comment">Teswiri görmek</string>
+    <string name="user_menu_reset_comment">Teswiri täzelemek</string>
+    <string name="user_menu_register">Hasaba almak</string>
+
+    <!-- Channel menu -->
+    <string name="channel_menu_pin">Sabitlemek</string>
+
+    <!-- Comment Fragment -->
+    <string name="comment_view">Görmek</string>
+    <string name="comment_edit_source">Çeşmäni düzetmek</string>
+    <string name="comment_view_source">Çeşmäni görmek</string>
+
+    <!-- Server Info Fragment -->
+    <string name="control_channel">Dolandyryş kanaly</string>
+    <string name="tcp_encryption_mode">256 bit AES-256-SHA bilen şifrlendi</string>
+    <string name="voice_channel">Ses kanaly</string>
+    <string name="udp_encryption_mode">128 bit OCB-AES-128 bilen şifrlendi</string>
+    <string name="audio_bandwidth">Ses zolak ini</string>
+    <string name="server_info_protocol">Protokol %s.</string>
+    <string name="server_info_version">%1$s (%2$s)</string>
+    <string name="server_info_latency">%.2f ms gijikme</string>
+    <string name="server_info_host">Uzak hojaýyn %1$s (port %2$d)</string>
+    <string name="server_info_codec">Kodek: %s</string>
+    <string name="server_info_max_bandwidth">Iň köp %.1f kbit/s</string>
+    <string name="server_info_current_bandwidth">Häzirki %.1f kbit/s</string>
+
+    <!-- Server matching -->
+    <string name="server_match">Serwer tap</string>
+    <string name="server_match_progress">Serwer gözlenilýär…</string>
+    <string name="server_match_found">Serwer tapyldy</string>
+    <string name="server_match_not_found">Serwer tapylmady</string>
+    <string name="server_match_expand_country">Ýurduňyzda amatly serwer tapylmady. Bütin dünýäde gözläliňmi\?</string>
+    <string name="server_match_info">At: %1$s\nHojaýyn: %2$s:%3$d\nUlanyjylar: %4$d / %5$d\nWersiýa: %6$s \nÝurt: %7$s \nGijikme: %8$d ms</string>
+    <string name="server_match_description">Mumla size awtomatik usulda ýerleşişe, wersiýa we gijikme boýunça iň gowy boş serweri tapyp biler.</string>
+
+    <!-- Common -->
+    <string name="no_servers">Ilki serwer goşmak üçin hereket çubugynyň \'Goş\' düwmesine basyň.</string>
+    <string name="server_password">Parol</string>
+    <string name="server_username">Ulanyjy ady</string>
+    <string name="server_port">Port</string>
+    <string name="server_host">Salgy</string>
+    <string name="server_label">Bellik</string>
+    <string name="connecting">Birikdirilýär</string>
+    <string name="connecting_to_server">%s-a birikdirilýär…</string>
+    <string name="ptt">Gürlemek üçin bas</string>
+    <string name="mute">Sesini öçür</string>
+    <string name="deafen">Gulak asmaz et</string>
+    <string name="disconnect">Birikdirmegi kes</string>
+    <string name="disconnectSure">%s-dan birikdirmegi kesmek isleýärsiňizmi\?</string>
+    <string name="save">Sakla</string>
+    <string name="add">Goş</string>
+    <string name="chat">Söhbet</string>
+    <string name="perm_denied">Rugsat ret edildi.</string>
+    <string name="connectionRefused">Birikme ret edildi</string>
+    <string name="confirm_delete_server">Bu serweri pozmak isleýärsiňizmi\?</string>
+    <string name="confirm_delete_channel">Bu kanaly pozmak isleýärsiňizmi\?</string>
+    <string name="no_ptt_key">Açar ýok</string>
+    <string name="reset_key">Açary täzele</string>
+    <string name="externalStorageUnavailable">Daşarky ammar elýeterli däl, sertifikaty ýükläp bolmaz</string>
+    <string name="addFavorite">Halanlara goş</string>
+    <string name="accessAdd">Giriş belgisi goş</string>
+    <string name="messageReceived">Täze habar</string>
+    <string name="generateCertSuccess">Sertifikatyňyz bellendi we %s hökmünde saklanyldy</string>
+    <string name="generateCertFailure">Sertifikat döredilip bilinmedi.</string>
+    <string name="generateCertProgress">Sertifikat döredilýär…</string>
+    <string name="search">Gözle</string>
+    <string name="searchHint">Kanallary we ulanyjylary gözle</string>
+    <string name="bluetooth">Bluetooth</string>
+    <string name="quickConnect">Çalt birikdir</string>
+    <string name="connect">Birikdir</string>
+    <string name="connectToServer">Serwere birikdir</string>
+    <string name="edit">Düzelt</string>
+    <string name="remove">Aýyr</string>
+    <string name="delete">Poz</string>
+    <string name="messageToUser">\'%s\' ulanyjysyna habar ýaz</string>
+    <string name="messageToChannel">\'%s\' kanalyna habar ýaz</string>
+    <string name="online">Onlaýn</string>
+    <string name="offline">Oflaýn</string>
+    <string name="clearChat">Söhbeti arassala</string>
+    <string name="connected">Birikdirildi</string>
+    <string name="mumlaConnected">Mumla birikdirildi</string>
+    <string name="mumlaConnecting">Mumla birikdirilýär…</string>
+    <string name="mumlaDisconnected">Mumla birikdirmesi kesildi</string>
+    <string name="channel">Kanal</string>
+    <string name="user">Ulanyjy</string>
+    <string name="unknown">Näbelli</string>
+    <string name="sort">Tertiple</string>
+    <string name="sortBy">Tertiplemek…</string>
+    <string name="name">At</string>
+    <string name="country">Ýurt</string>
+    <string name="share">Paýlaş</string>
+    <string name="description">Beýan</string>
+    <string name="shareMessage">Mumla bilen bu Mumble serwere goşulyň. %s</string>
+    <string name="status_notify_muted_and_deafened">Sesiz we gulagsyz.</string>
+    <string name="status_notify_muted">Sesiz.</string>
+    <string name="close">Ýap</string>
+    <string name="search_name">At</string>
+    <string name="search_country">Ýurt</string>
+    <string name="information">Maglumat</string>
+    <string name="error_fetching_servers">Serwerler alynmady.\nInternetde birikdiňizmi\?</string>
+    <string name="overlay">Üst gatlagy</string>
+    <string name="hint_reason">Sebäp</string>
+    <string name="action_settings">Sazlamalar</string>
+    <string name="reconnect">Täzeden birikdir</string>
+    <string name="reconnect_dialog_message">Siz eýýäm bir serwere birikdirildiňiz. Onuň ýerine bu serwere birikdirilsinmi\?</string>
+    <string name="confirm_reset_comment">%s ulanyjynyň teswirini täzelemek isleýärsiňizmi\?</string>
+    <string name="confirm">Tassykla</string>
+    <string name="expand">Giňelt</string>
+    <string name="temporary">Wagtlaýyn</string>
+    <string name="position">Ýerleşiş</string>
+    <string name="channel_edit">Kanaly düzelt</string>
+    <string name="channel_add">Kanal goş</string>
+    <string name="tts_failed">TTS başladylmady</string>
+    <string name="mumble_url_parse_failed">Mumble URL-i ýalňyş.</string>
+    <string name="first_run_generate_certificate_title">Mumla-a hoş geldiňiz</string>
+    <string name="first_run_generate_certificate">Sertifikat döretmek maslahat berilýär we käbir serwerlere birikdirilmek üçin zerurdyr.</string>
+    <string name="generate">Döret</string>
+    <string name="invalid_password">Ýalňyş parol.</string>
+    <string name="send_message">Habar ugrat</string>
+    <string name="channel_menu_view_description">Beýany gör</string>
+    <string name="untrusted_certificate">Ynanylmadyk sertifikat</string>
+    <string name="allow">Rugsat ber</string>
+    <string name="trust_added">Sertifikat ynam ammaryna goşuldy</string>
+    <string name="trust_add_failed">Sertifikat ynam ammaryna goşulmady.</string>
+    <string name="trust_cleared">Ynam ammar arassalandy</string>
+    <string name="cancelled">Ýatyryldy</string>
+    <string name="current_chat_target">Häzirki söhbet nyşanasy</string>
+    <string name="channel_join">Goşul</string>
+    <string name="certificate_info">Tema:\n%1$s\n\nGeçerli döwründen:\n%2$s\n\nGeçerli döwrüne çenli:\n%3$s\n\nÖwürme (SHA-1):\n%4$s\n\nÖwürme (SHA-256):\n%5$s</string>
+    <string name="invalid_host">Ýalňyş hojaýyn</string>
+    <string name="invalid_port_range">Ýalňyş port (1-65535)</string>
+    <string name="cancel_reconnect">Täzeden birikdirmegi ýatyr</string>
+    <string name="attempting_reconnect">Ýalňyşlyk: %s.\n\nTäzeden birikdirilýär…</string>
+    <string name="change_requires_reconnect">Täze sazlamalary ulanmak üçin täzeden birikdir.</string>
+    <string name="no_certificate">Sertifikat ýok</string>
+    <string name="certificates">Sertifikatlar</string>
+    <string name="decrypt_certificate">Sertifikaty açgyrla</string>
+    <string name="password">Parol</string>
+    <string name="invalid_certificate">Ýalňyş sertifikat ýüklenip bilinmedi.</string>
+    <string name="certificate_load_failed">Sertifikat saklanmady.</string>
+    <string name="certificate_import_success">%s sertifikaty import edildi.</string>
+    <string name="error_writing_to_storage">Daşarky ammara ýazmak başartmady.</string>
+    <string name="export_success">Sertifikat %s-a eksport edildi.</string>
+    <string name="context_channel_link">Baglanyşdyr</string>
+    <string name="context_channel_unlink_all">Hemmesiniň baglanyşygyny aýyr</string>
+    <string name="context_channel_shout">Ses nyşanasyny sazla</string>
+    <string name="shout_include_linked">Baglanyşdyrylan kanallara çagyr</string>
+    <string name="shout_include_subchannels">Alt kanallara çagyr</string>
+    <string name="shout_failed">Ses nyşanasy döredilmedi.</string>
+    <string name="shout_target">%s-a çagyrylýar</string>
+    <string name="shout_configure">Ses nyşanasyny sazla</string>
+    <string name="grant_perm_microphone">Mikrofona rugsat beriň.</string>
+    <string name="grant_perm_notifications">Bildiriş ugratmaga rugsat beriň.</string>
+    <string name="grant_perm_storage">Daşarky ammara rugsat beriň.</string>
+    <string name="grant_perm_draw_over_apps">Beýleki programmalaryň üstünde görkezmäge rugsat beriň.</string>
+    <string name="orbot_not_installed">Orbot programmasy gurulmady. Tor ulanylmaýar.</string>
+    <string name="orbot_tor_failed">%d portdaky ýerli Tor proxy-ä (SOCKS) birikip bolmady.\n\nOrbot programmasiniň işleýändigini barlaň.</string>
+    <string name="default_">Bökdençsiz</string>
+    <string name="donation_thanks">Bagyş üçin sag boluň.</string>
+    <string name="image_confirm_send">Bu suraty ugratmaly\?</string>
+
+    <plurals name="search_channel_users">
+        <item quantity="one">%d ulanyjy</item>
+        <item quantity="other">%d ulanyjy</item>
+    </plurals>
+    <plurals name="notification_unread_many">
+        <item quantity="one">%d täze habar</item>
+        <item quantity="other">%d täze habar</item>
+    </plurals>
+
+    <string name="app_news">Täzelikler</string>
+    <string name="app_news_summary">Iň soňky täzelikleri gör</string>
+    <string name="app_news_footer_on_startup">Bu habarlar Hakda sahypasyndan täzeden görülip bilner.</string>
+
+    <string name="app_news_items_v3_7_0">• Mumla-y Android 15 we 16 (API 35 we 36) üçin täzelemek üçin köp iş edildi.\n
+• Netijede, Android 5.0 (API 21) ýa-da soňraky wersiýalar talap edilýär.\n
+• Tema, ulgamyň açyk/garaňky modlaryny goldamak üçin täzelendi.\n
+• Sazlamalar ekrany täze API-lere uýgunlaşdyryldy.\n
+• Programmada dil tercihi goşuldy.\n</string>
+    <string name="app_news_items_v3_7_1">• Esasan terjime täzelemelerini öz içine alýan kiçi çykarym, ähli terjimeçilere sag boluň!\n</string>
+    <string name="app_news_items_v3_7_2">• Başlangyçda döräp biläýjek awariýa düzedildi.\n
+• Käbir terjimeler goşuldy, ähli terjimeçilere sag boluň!\n</string>
+    <string name="app_news_items_v3_7_3">• Android 12 we soňraky wersiýalarda, şeýle hem garaňky we açyk arka fonlarda PTT burç düwmesi görünýär edildi\n
+• Android 16 we soňraky wersiýalarda, Yza düwmesi serwerden birikdirmegi kesmegi soraýar\n</string>
+
+    <!-- Used only by flavor "goog" -->
+    <string name="donate_dialog_title_goog">Mumla-dan hoşaldyňyzmy\?</string>
+    <string name="donate_dialog_message_goog">Mumla-y ulananyňyz üçin sag boluň! Mumla-y saklamak we bu habary aýyrmak üçin az mukdarda bagyş etmegi göz öňünde tutuň.</string>
+    <string name="donate_dialog_positivebutton_goog">Mumla-y goldaň</string>
+    <string name="donate_dialog_negativebutton_goog">Soňrak</string>
+    <string name="donate_purchase_pending_goog">Bagyşyňyz garaşylýar we soňraky täzeden başlatmada taýyn bolup biler. Sag boluň!</string>
+    <string name="donate_thanks_goog">Goldawyňyz üçin sag boluň!</string>
+
+    <!-- Used only by flavor "foss" -->
+    <string name="donate_foss">Bagyş et</string>
+</resources>
