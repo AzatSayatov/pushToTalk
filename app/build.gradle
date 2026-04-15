@@ -44,7 +44,7 @@ allprojects {
 }
 
 android {
-    namespace = 'se.lublin.mumla'
+    namespace = 'com.telekom.radio'
     compileSdk = 36
 
     compileOptions {
@@ -70,7 +70,7 @@ android {
         minSdkVersion 21
         targetSdk 36
 
-        applicationId "se.lublin.mumla"
+        applicationId "com.telekom.radio"
         // Remember: app_news_items_vX_Y_Z in src/main/res/values/strings.xml
         // and NEWS_ITEMS in src/main/res/java/se/lublin/mumla/app/DialogUtils.java
         //     code:XYYZZbb (bb for build)
@@ -87,19 +87,19 @@ android {
     productFlavors {
         goog {
             dimension "release"
-            applicationId "se.lublin.mumla"
+            applicationId "com.telekom.radio"
         }
         foss {
             dimension "release"
-            applicationId "se.lublin.mumla"
+            applicationId "com.telekom.radio"
         }
         donation {
             dimension "release"
-            applicationId "se.lublin.mumla.donation"
+            applicationId "com.telekom.radio.donation"
         }
         beta {
             dimension "release"
-            applicationId "se.lublin.mumla.beta"
+            applicationId "com.telekom.radio.beta"
         }
     }
 

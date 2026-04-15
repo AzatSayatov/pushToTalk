@@ -3,8 +3,8 @@
 
     <application>
         <provider
-            android:name="se.lublin.mumla.channel.ChannelSearchProvider"
-            android:authorities="se.lublin.mumla.channel.ChannelSearchProvider"
+            android:name="com.telekom.radio.channel.ChannelSearchProvider"
+            android:authorities="com.telekom.radio.channel.ChannelSearchProvider"
             android:exported="false" />
     </application>
 

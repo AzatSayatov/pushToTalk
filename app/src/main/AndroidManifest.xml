@@ -43,7 +43,7 @@
     </queries>
 
     <application
-        android:name=".app.MumlaApplication"
+        android:name="com.telekom.radio.app.MumlaApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_1"
         android:label="@string/app_name"
@@ -53,43 +53,43 @@
         <!-- requestLegacyExternalStorage still true: we keep using old code if Android < 30 -->
 
         <activity
-            android:name=".preference.SettingsActivity"
+            android:name="com.telekom.radio.preference.SettingsActivity"
             android:exported="false">
             <intent-filter>
-                <action android:name="se.lublin.mumla.app.PREFS_GENERAL" />
+                <action android:name="com.telekom.radio.app.PREFS_GENERAL" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter>
-                <action android:name="se.lublin.mumla.app.PREFS_AUTHENTICATION" />
+                <action android:name="com.telekom.radio.app.PREFS_AUTHENTICATION" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter>
-                <action android:name="se.lublin.mumla.app.PREFS_AUDIO" />
+                <action android:name="com.telekom.radio.app.PREFS_AUDIO" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter>
-                <action android:name="se.lublin.mumla.app.PREFS_APPEARANCE" />
+                <action android:name="com.telekom.radio.app.PREFS_APPEARANCE" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter>
-                <action android:name="se.lublin.mumla.app.PREFS_ABOUT" />
+                <action android:name="com.telekom.radio.app.PREFS_ABOUT" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
         <service
-            android:name=".service.MumlaService"
+            android:name="com.telekom.radio.service.MumlaService"
             android:exported="true"
             android:enabled="true"
             android:foregroundServiceType="microphone" />
 
         <activity
-            android:name=".app.MumlaActivity"
+            android:name="com.telekom.radio.app.MumlaActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:exported="true">
@@ -117,47 +117,47 @@
         </activity>
 
         <activity
-            android:name=".preference.CertificateSelectActivity"
+            android:name="com.telekom.radio.preference.CertificateSelectActivity"
             android:theme="@style/Theme.Mumla"
             android:exported="true">
             <intent-filter>
-                <action android:name="se.lublin.mumla.app.CERTIFICATE_SELECT" />
+                <action android:name="com.telekom.radio.app.CERTIFICATE_SELECT" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".preference.CertificateImportActivity"
+            android:name="com.telekom.radio.preference.CertificateImportActivity"
             android:theme="@style/Theme.Mumla"
             android:exported="true">
             <intent-filter>
-                <action android:name="se.lublin.mumla.app.CERTIFICATE_IMPORT" />
+                <action android:name="com.telekom.radio.app.CERTIFICATE_IMPORT" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".preference.CertificateExportActivity"
+            android:name="com.telekom.radio.preference.CertificateExportActivity"
             android:theme="@style/Theme.Mumla"
             android:exported="true">
             <intent-filter>
-                <action android:name="se.lublin.mumla.app.CERTIFICATE_EXPORT" />
+                <action android:name="com.telekom.radio.app.CERTIFICATE_EXPORT" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".preference.CertificateGenerateActivity"
+            android:name="com.telekom.radio.preference.CertificateGenerateActivity"
             android:theme="@style/Theme.Mumla"
             android:exported="true">
             <intent-filter>
-                <action android:name="se.lublin.mumla.app.CERTIFICATE_GENERATE" />
+                <action android:name="com.telekom.radio.app.CERTIFICATE_GENERATE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".preference.ServerCertificateClearActivity"
+            android:name="com.telekom.radio.preference.ServerCertificateClearActivity"
             android:theme="@style/Theme.Mumla"
             android:exported="true">
             <intent-filter>
-                <action android:name="se.lublin.mumla.app.CLEAR_SERVER_CERTIFICATES" />
+                <action android:name="com.telekom.radio.app.CLEAR_SERVER_CERTIFICATES" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
