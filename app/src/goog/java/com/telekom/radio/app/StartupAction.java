@@ -112,11 +112,11 @@ public class StartupAction implements IStartupAction {
                             break;
                         }
                     }
-                    if (!foundAndHandled) {
-                        if (startupCount % 5 == 1 || startupCount % 5 == 3) {
-                            showDonationDialog(activity);
-                        }
-                    }
+//                    if (!foundAndHandled) {
+//                        if (startupCount % 5 == 1 || startupCount % 5 == 3) {
+//                            showDonationDialog(activity);
+//                        }
+//                    }
                 });
             }
 

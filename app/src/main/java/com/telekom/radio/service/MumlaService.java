@@ -21,8 +21,9 @@ import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.media.AudioFormat;
 import android.media.AudioManager;
-import android.media.ToneGenerator;
+import android.media.AudioTrack;
 import android.net.Uri;
 import android.os.Binder;
 import android.os.Build;
@@ -82,8 +83,6 @@ public class MumlaService extends HumlaService implements
     private PowerManager.WakeLock mProximityLock;
     /** Play sound when push to talk key is pressed */
     private boolean mPTTSoundEnabled;
-    /** ToneGenerator for radio-style beep before/after transmission */
-    private ToneGenerator mToneGenerator;
     /** Try to shorten spoken messages when using TTS */
     private boolean mShortTtsMessagesEnabled;
     /**
@@ -280,13 +279,24 @@ public class MumlaService extends HumlaService implements
                 Log.d(TAG, "exception in onUserTalkStateUpdated: " + e);
             }
 
-            if (isConnectionEstablished() &&
-                    user.getSession() == selfSession &&
-                    getTransmitMode() == Constants.TRANSMIT_PUSH_TO_TALK &&
-                    user.getTalkState() == TalkState.TALKING &&
-                    mPTTSoundEnabled) {
-                AudioManager audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
-                audioManager.playSoundEffect(AudioManager.FX_KEYPRESS_STANDARD, -1);
+            if (!isConnectionEstablished()) return;
+
+            if (user.getSession() == selfSession) {
+                // Self: play PTT click sound
+                if (getTransmitMode() == Constants.TRANSMIT_PUSH_TO_TALK &&
+                        user.getTalkState() == TalkState.TALKING &&
+                        mPTTSoundEnabled) {
+                    AudioManager audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
+                    audioManager.playSoundEffect(AudioManager.FX_KEYPRESS_STANDARD, -1);
+                }
+            } else {
+                // Other user: play beep on start/end of transmission
+                TalkState state = user.getTalkState();
+                if (state == TalkState.TALKING || state == TalkState.SHOUTING || state == TalkState.WHISPERING) {
+                    playRadioBeep(true);
+                } else if (state == TalkState.PASSIVE) {
+                    playRadioBeep(false);
+                }
             }
         }
     };
@@ -319,7 +329,6 @@ public class MumlaService extends HumlaService implements
             mTTS = new TextToSpeech(this, mTTSInitListener);
 
         mTalkReceiver = new TalkBroadcastReceiver(this);
-        mToneGenerator = new ToneGenerator(AudioManager.STREAM_VOICE_CALL, 80);
     }
 
     @Override
@@ -348,10 +357,6 @@ public class MumlaService extends HumlaService implements
 
         unregisterObserver(mObserver);
         if(mTTS != null) mTTS.shutdown();
-        if(mToneGenerator != null) {
-            mToneGenerator.release();
-            mToneGenerator = null;
-        }
         mMessageLog = null;
         mMessageNotification.dismiss();
         super.onDestroy();
@@ -608,16 +613,35 @@ public class MumlaService extends HumlaService implements
     }
 
     /**
-     * Plays a short radio-style beep tone (like Russian federal radio before/after transmission).
-     * @param start true for start-of-transmission beep, false for end-of-transmission beep
+     * Plays a short radio-style beep tone like Russian police/emergency radio.
+     * Uses AudioTrack to generate a pure sine wave at a precise frequency.
+     * @param start true for start-of-transmission beep (1200 Hz), false for end (900 Hz)
      */
     private void playRadioBeep(boolean start) {
-        if (mToneGenerator == null) return;
-        // Start: higher pitched short beep (1000 Hz via DTMF_2 ~770 Hz approximation)
-        // End: slightly lower beep
-        int tone = start ? ToneGenerator.TONE_CDMA_ALERT_CALL_GUARD
-                         : ToneGenerator.TONE_CDMA_PIP;
-        mToneGenerator.startTone(tone, 150);
+        final double frequency = start ? 1200.0 : 900.0;
+        final int durationMs = 150;
+        new Thread(() -> {
+            final int sampleRate = 44100;
+            final int numSamples = sampleRate * durationMs / 1000;
+            final int fadeLen = sampleRate / 200; // 5ms fade to avoid clicks
+            short[] samples = new short[numSamples];
+            for (int i = 0; i < numSamples; i++) {
+                double angle = 2 * Math.PI * i * frequency / sampleRate;
+                double envelope = 1.0;
+                if (i < fadeLen) envelope = (double) i / fadeLen;
+                else if (i > numSamples - fadeLen) envelope = (double) (numSamples - i) / fadeLen;
+                samples[i] = (short) (envelope * 0.7 * Short.MAX_VALUE * Math.sin(angle));
+            }
+            AudioTrack track = new AudioTrack(
+                    AudioManager.STREAM_MUSIC, sampleRate,
+                    AudioFormat.CHANNEL_OUT_MONO, AudioFormat.ENCODING_PCM_16BIT,
+                    numSamples * 2, AudioTrack.MODE_STATIC);
+            track.write(samples, 0, numSamples);
+            track.play();
+            try { Thread.sleep(durationMs + 50); } catch (InterruptedException ignored) {}
+            track.stop();
+            track.release();
+        }).start();
     }
 
     /**
