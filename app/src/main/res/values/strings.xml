@@ -189,6 +189,9 @@
     <string name="context_channel_link">Link</string>
     <string name="context_channel_unlink_all">Unlink All</string>
     <string name="context_channel_shout">Set Voice Target</string>
+    <string name="context_channel_whisper_members">Whisper to members</string>
+    <string name="whisper_select_members">Select members to whisper to</string>
+    <string name="whisper_no_members">No other members in this channel</string>
     <string name="shout_include_linked">Shout to linked channels</string>
     <string name="shout_include_subchannels">Shout to subchannels</string>
     <string name="shout_failed">Could not create voice target.</string>

@@ -92,7 +92,7 @@ android {
 
     // Trigger NDK build on java compilation task.
     task ndkBuild(type: Exec) {
-    def ndkExe = "/home/user/Android/Sdk/ndk/25.1.8937393/ndk-build"
+    def ndkExe = System.getProperty("user.home") + "/Library/Android/sdk/ndk/25.1.8937393/ndk-build"
         if (DefaultNativePlatform.getCurrentOperatingSystem().isWindows()) {
           ndkExe += '.cmd'
         }

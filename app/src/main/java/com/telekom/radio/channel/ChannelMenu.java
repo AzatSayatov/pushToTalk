@@ -37,10 +37,14 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import se.lublin.humla.IHumlaService;
 import se.lublin.humla.IHumlaSession;
 import se.lublin.humla.model.IChannel;
+import se.lublin.humla.model.IUser;
 import se.lublin.humla.model.Server;
 import se.lublin.humla.model.WhisperTargetChannel;
+import se.lublin.humla.model.WhisperTargetUsers;
 import se.lublin.humla.net.Permissions;
 import se.lublin.humla.util.VoiceTargetMode;
+import java.util.ArrayList;
+import java.util.List;
 import com.telekom.radio.R;
 import com.telekom.radio.channel.comment.ChannelDescriptionFragment;
 import com.telekom.radio.db.MumlaDatabase;
@@ -170,6 +174,60 @@ public class ChannelMenu implements PermissionsPopupMenu.IOnMenuPrepareListener,
                         }
                         WhisperTargetChannel channelTarget = new WhisperTargetChannel(mChannel, linkedBox.isChecked(), subchannelBox.isChecked(), null);
                         byte id = session.registerWhisperTarget(channelTarget);
+                        if (id > 0) {
+                            session.setVoiceTargetId(id);
+                        } else {
+                            Toast.makeText(mContext, R.string.shout_failed, Toast.LENGTH_LONG).show();
+                        }
+                    })
+                    .setNegativeButton(android.R.string.cancel, null)
+                    .show();
+        } else if (itemId == R.id.context_channel_whisper_members) {
+            int selfSession = mService.HumlaSession().getSessionId();
+            List<? extends IUser> channelUsers = mChannel.getUsers();
+            final List<IUser> targetableUsers = new ArrayList<>();
+            for (IUser user : channelUsers) {
+                if (user.getSession() != selfSession) {
+                    targetableUsers.add(user);
+                }
+            }
+
+            if (targetableUsers.isEmpty()) {
+                Toast.makeText(mContext, R.string.whisper_no_members, Toast.LENGTH_SHORT).show();
+                return true;
+            }
+
+            final CharSequence[] userNames = new CharSequence[targetableUsers.size()];
+            final boolean[] checkedItems = new boolean[targetableUsers.size()];
+            for (int i = 0; i < targetableUsers.size(); i++) {
+                userNames[i] = targetableUsers.get(i).getName();
+                checkedItems[i] = false;
+            }
+
+            new MaterialAlertDialogBuilder(mContext)
+                    .setTitle(R.string.whisper_select_members)
+                    .setMultiChoiceItems(userNames, checkedItems, (dialog, which, isChecked) -> {
+                        checkedItems[which] = isChecked;
+                    })
+                    .setPositiveButton(R.string.confirm, (dialog, which) -> {
+                        List<IUser> selectedUsers = new ArrayList<>();
+                        for (int i = 0; i < checkedItems.length; i++) {
+                            if (checkedItems[i]) {
+                                selectedUsers.add(targetableUsers.get(i));
+                            }
+                        }
+                        if (selectedUsers.isEmpty()) {
+                            return;
+                        }
+                        if (!mService.isConnected()) {
+                            return;
+                        }
+                        IHumlaSession session = mService.HumlaSession();
+                        if (session.getVoiceTargetMode() == VoiceTargetMode.WHISPER) {
+                            session.unregisterWhisperTarget(session.getVoiceTargetId());
+                        }
+                        WhisperTargetUsers whisperTarget = new WhisperTargetUsers(selectedUsers);
+                        byte id = session.registerWhisperTarget(whisperTarget);
                         if (id > 0) {
                             session.setVoiceTargetId(id);
                         } else {

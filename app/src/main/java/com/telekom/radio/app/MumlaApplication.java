@@ -19,7 +19,7 @@ public class MumlaApplication extends Application implements SharedPreferences.O
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         applyTheme(preferences);
         // Always use Turkmen language
-        setApplicationLocales(forLanguageTags("tk"));
+        setApplicationLocales(forLanguageTags("en"));
         preferences.registerOnSharedPreferenceChangeListener(this);
     }
 
@@ -31,7 +31,7 @@ public class MumlaApplication extends Application implements SharedPreferences.O
         switch (key) {
             case PREF_LANGUAGE:
                 // Language is always forced to Turkmen
-                setApplicationLocales(forLanguageTags("tk"));
+                setApplicationLocales(forLanguageTags("en"));
                 break;
             case PREF_THEME:
                 applyTheme(preferences);

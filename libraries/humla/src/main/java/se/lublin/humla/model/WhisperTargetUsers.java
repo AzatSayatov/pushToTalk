@@ -17,19 +17,42 @@
 
 package se.lublin.humla.model;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import se.lublin.humla.protobuf.Mumble;
 
 /**
  * Created by andrew on 28/04/16.
  */
 public class WhisperTargetUsers implements WhisperTarget {
+    private final List<IUser> mUsers;
+
+    public WhisperTargetUsers(Collection<? extends IUser> users) {
+        mUsers = new ArrayList<>(users);
+    }
+
     @Override
     public Mumble.VoiceTarget.Target createTarget() {
-        throw new UnsupportedOperationException(); // TODO
+        Mumble.VoiceTarget.Target.Builder vtb = Mumble.VoiceTarget.Target.newBuilder();
+        for (IUser user : mUsers) {
+            vtb.addSession(user.getSession());
+        }
+        return vtb.build();
     }
 
     @Override
     public String getName() {
-        throw new UnsupportedOperationException(); // TODO
+        if (mUsers.isEmpty()) {
+            return "";
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < mUsers.size(); i++) {
+            if (i > 0) {
+                sb.append(", ");
+            }
+            sb.append(mUsers.get(i).getName());
+        }
+        return sb.toString();
     }
 }
