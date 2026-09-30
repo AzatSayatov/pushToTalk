@@ -139,7 +139,12 @@ public class ModelHandler extends HumlaTCPMessageListener.Stub {
         if(msg.hasParent()) {
             Channel oldParent = channel.getParent();
             channel.setParent(parent);
-            parent.addSubchannel(channel);
+            if (parent != null) {
+                parent.addSubchannel(channel);
+            } else {
+                Log.w(TAG, "Parent channel " + msg.getParent() + " not found for channel " + channel.getId());
+                // опционально: создать заглушку-родителя или отложить обработку
+            }
             if(oldParent != null) {
                 oldParent.removeSubchannel(channel);
             }
